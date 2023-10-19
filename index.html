@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bankist</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./layout.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://kit.fontawesome.com/21cf0ca2ce.js" crossorigin="anonymous"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="flex-space">
+      <div class="flex-center gap1">
+        <div><img src="./logo.png" class="logo" /></div>
+        <h2 class="header-text">Bankist</h2>
+      </div>
+      <div class="flex-center gap1 clcuser">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="user-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+          />
+        </svg>
+        <h2 class="header-text username-label">Jonas!</h2>
+      </div>
+    </header>
+    <main>
+      <section class="display-section">
+        <div class="balance-information flex-space">
+          <div>
+            <h2 class="secondary-heading">Current Balance</h2>
+            <p class="date">As of 29/06/2023, 18:32</p>
+          </div>
+          <h1 class="balance-amount" id="number">25952,59$</h1>
+        </div>
+        <div class="operations-data">
+          <button class="btn btn-transfer">Withdraw</button>
+          <button class="btn btn-request">Request Loan</button>
+        </div>
+        <div class="analysis">
+          <div class="card card-positive">
+            <p class="card-title">IN</p>
+            <h3 class="deposit-total-card card-amount">25952,59$</h3>
+          </div>
+          <div class="card card-negative">
+            <p class="card-title">Out</p>
+            <h3 class="withdraw-total-card card-amount">0$</h3>
+          </div>
+        </div>
+        <div class="transactions"></div>
+      </section>
+      <section class="operations-container">
+        <div class="userpoup">
+          <i class="fas fa-x usclx"></i>
+          <div class="useimg">
+            <img src="./logo.png" alt="">
+          </div>
+          <hr>
+          <div class="useinfo">
+            <h3>Name: John doe</h3>
+            <h3>Email: user@gmail.com</h3>
+            <div>
+              <a href="/" class="logout-btn"> &larr;&nbsp;Logout</a>
+            </div>
+          </div>
+        </div>
+        <div class="operations-data">
+          <div class="flex-space stat">
+            <h5 class="stats-heading">Average Withdraw</h5>
+            <h5 class="stats-data avg-withdraw">15$</h5>
+          </div>
+          <div class="flex-space stat">
+            <h5 class="stats-heading">Maximum Withdraw</h5>
+            <h5 class="stats-data max-withdraw">15$</h5>
+          </div>
+          <div class="flex-space stat">
+            <h5 class="stats-heading">Average Deposit</h5>
+            <h5 class="stats-data avg-deposit">15$</h5>
+          </div>
+        </div>
+        <div class="flex-space gap1">
+          <div>
+            <span class="mins date">00</span><span class="date"> : </span>
+            <span class="seconds date">00</span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="overlay-container hide"></div>
+    <!-- TRANSFER DIALOG -->
+    <!-- <div class="userpoup">
+      <i class="fas fa-x usclx"></i>
+      <div class="useimg">
+        <img src="./logo.png" alt="">
+      </div>
+      <hr>
+      <div class="useinfo">
+        <h3>Name: John doe</h3>
+        <h3>Email: user@gmail.com</h3>
+        <div>
+          <a href="/" class="logout-btn"> &larr;&nbsp;Logout</a>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- withdraw-popups -->
+    <div class="widraw-popp">
+      <form action="">
+        <button type="reset" class="resetbtn">Reset</button>
+        <i class="fas fa-x clsx"></i>
+        <div class="witdrrwtype-box">
+          <h3 class="errmsg" style="text-align: center; color: red; font-size: 15px;"></h3>
+          <div class="ammnt">
+            <input type="number" name="amoun" id="amount" placeholder="Amount" class="amoun">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <div class="typetrans">
+            <select id="cars" name="state" class="seldeptype">
+              <option value="" disabled>Choose</option>
+              <option value="direcdeposit">Direct deposit</option>
+              <option value="cheque">Check</option>
+            </select>
+          </div>
+          <div class="form1-box">
+            <h2 style="text-align: center; margin-top: 1rem; font-size: 16px;">Fill out your bank details</h2>
+            <input type="text" name="" id="" placeholder="Full name" class="transbb" required>
+            <input type="number" name="Routenumber" placeholder="Routine number" class="transbb" required>
+            <input type="number" name="account" id="acctnum" placeholder="Account number" class="transbb" required>
+            <input type="text" name="Bank name" id="" placeholder="Bank name" class="transbb" required>
+          </div>
+          <div class="form2-box">
+            <h3 style="text-align: center; margin-top: 1rem; font-size: 16px;">Fill out your mailling address</h3>
+            <!-- <span class="errmsg">All field is required</span> -->
+            <input type="text" name="Address" id="" placeholder="Address" class="mailbb" required autofocus>
+            <input type="text" name="city" placeholder="City" class="mailbb" required>
+            <input type="text" name="state" id="" placeholder="State" class="mailbb" required>
+            <input type="number" name="zip" id="" placeholder="Zipcode" class="mailbb" required>
+          </div>
+        </div>
+        <div class="nextbt">Next</div>
+        <input type="submit" value="Confirm withdraw" class="smit">
+      </form>
+    </div>
+    <div class="box-loader">
+      <div class="loader"></div>
+    </dic>
+    <script src="./app.js"></script>
+  </body>
+</html>
