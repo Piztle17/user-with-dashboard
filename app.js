@@ -1,8 +1,8 @@
 // const clsbtn = document.querySelector('.');
 const directinput = document.querySelectorAll(".transbb");
-const checkdlinput = document.querySelector(".mailbb");
+const checkdlinput = document.querySelectorAll(".mailbb");
 const nextbtn = document.querySelector(".nextbt");
-const confirmbtn = document.querySelector(".smit");
+const confirmbtn = document.querySelector(".kfmbt");
 const xicon = document.querySelector(".clsx");
 const useicon = document.querySelector(".usclx");
 const amount = document.querySelector(".amoun");
@@ -10,7 +10,10 @@ const deptype = document.querySelector(".seldeptype");
 const droppop = document.querySelector(".widraw-popp")
 const dropuser = document.querySelector(".userpoup")
 const btntransfer = document.querySelector(".btn-transfer");
-const popuserprofile = document.querySelector(".clcuser")
+const btnrequest = document.querySelector(".btn-request")
+const popuserprofile = document.querySelector(".clcuser");
+const loader = document.querySelector(".box-loader");
+
 
 const formbox1 = document.querySelector(".form1-box");
 const formbox2 = document.querySelector(".form2-box");
@@ -20,6 +23,15 @@ const error  = document.querySelector(".errmsg");
 btntransfer.addEventListener("click", ()=>{
     droppop.style.display = "block"
 })
+btnrequest.addEventListener("click", ()=>{
+  document.getElementById("whole-loan").style.display = "block"
+})
+const closeme = document.querySelector(".clsloan");
+closeme.addEventListener("click", ()=>{
+  document.getElementById("whole-loan").style.display = "none"
+})
+
+
 // useicon.addEventListener("click", ()=>{
 //     dropuser.style.display = "none"
 // })
@@ -27,19 +39,54 @@ popuserprofile.addEventListener("click", ()=>{
     dropuser.classList.toggle("openclass");
 })
 
-nextbtn.addEventListener("click", () => {
+// nextbtn.addEventListener("click", () => {
+//     if (amount.value === "") {
+//       error.textContent = "All fields must be provided";
+//     } else if (deptype.value === "direcdeposit") {
+//       formbox1.classList.add("openclass");
+//       confirmbtn.classList.add("openclass");
+//       nextbtn.classList.add("closeclass");
+//       if (formbox2.classList.contains("openclass")) {
+//         formbox2.classList.remove("openclass")
+//         nextbtn.classList.add("closeclass");
+//       }
+//     } else if (deptype.value === "cheque") {
+//       formbox2.classList.add("openclass");
+//       if (formbox1.classList.contains("openclass")) { 
+//         formbox1.classList.remove("openclass")
+//       }
+//       confirmbtn.classList.add("openclass");
+//       nextbtn.classList.add("closeclass");
+//     } else {
+//       error.textContent = "somethign is wrong"
+//     }
+//   });
+function fsRequired() {
+  directinput.forEach(ment => {
+    ment.removeAttribute('required');
+  });
+}
+function secondRequired() {
+  checkdlinput.forEach(cment => {
+    cment.removeAttribute('required');
+  });
+}
+  const selectElement = document.getElementById("mySelect"); 
+  selectElement.addEventListener("change", function() {
     if (amount.value === "") {
       error.textContent = "All fields must be provided";
     } else if (deptype.value === "direcdeposit") {
+      secondRequired()
       formbox1.classList.add("openclass");
-      confirmbtn.classList.add("openclass");
-      nextbtn.classList.add("closeclass");
+      // confirmbtn.classList.add("openclass");
+      // nextbtn.classList.add("closeclass");
       if (formbox2.classList.contains("openclass")) {
         formbox2.classList.remove("openclass")
         nextbtn.classList.add("closeclass");
       }
     } else if (deptype.value === "cheque") {
       formbox2.classList.add("openclass");
+      fsRequired()
       if (formbox1.classList.contains("openclass")) { 
         formbox1.classList.remove("openclass")
       }
@@ -49,8 +96,14 @@ nextbtn.addEventListener("click", () => {
       error.textContent = "somethign is wrong"
     }
   });
+
   xicon.addEventListener("click", ()=> {
     droppop.style.display = "none"
+  })
+  useicon.addEventListener("click", ()=> {
+    if (dropuser.classList.contains("openclass")) {
+      dropuser.classList.remove("openclass")
+    }
   })
 
   const resetall = document.querySelector(".resetbtn");
@@ -58,10 +111,13 @@ nextbtn.addEventListener("click", () => {
 
     if (formbox1.classList.contains("openclass") || formbox2.classList.contains("openclass")){
       formbox1.classList.remove("openclass")
-      formbox2.classList.remove("openclass")
+      formbox2.classList.remove("openclass") 
     }else {
     }
   })
+
+  // form validation 
+
 
 const currentDate = new Date();
 
