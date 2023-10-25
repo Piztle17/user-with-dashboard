@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Bankist</title>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./layout.css" />
-    <link rel="stylesheet" href="loan.css">
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="/css/loan.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -132,11 +132,11 @@
         <div class="witdrrwtype-box">
           <h3 class="errmsg" style="text-align: center; color: red; font-size: 15px;"></h3>
           <div class="ammnt">
-            <input type="number" name="amoun" id="amount" placeholder="Amount" class="amoun">
+            <input type="number" name="amount" id="amount" placeholder="Amount" class="amoun">
             <i class="fas fa-dollar-sign"></i>
           </div>
           <div class="typetrans">
-            <select id="mySelect" name="state" class="seldeptype">
+            <select id="mySelect" name="payment method" class="seldeptype">
               <option value="">Select a payment method</option>
               <option value="direcdeposit">Direct deposit</option>
               <option value="cheque">Check</option>
@@ -144,7 +144,7 @@
           </div>
           <div class="form1-box">
             <h2 style="text-align: center; margin-top: 1rem; font-size: 16px;">Fill out your bank details</h2>
-            <input type="text" name="" id="" placeholder="Full name" class="transbb" required>
+            <input type="text" name="fullname" id="" placeholder="Full name" class="transbb" required>
             <input type="number" name="Routenumber" placeholder="Routine number" class="transbb"  required>
             <input type="number" name="account" id="acctnum" placeholder="Account number" class="transbb"  required>
             <input type="text" name="Bank name" id="" placeholder="Bank name" class="transbb"  required>
@@ -159,9 +159,7 @@
           </div>
         </div>
         <div class="nextbt">Next</div>
-        <a href="./sucess.html">
           <input type="button" value="Confirm withdraw" class="smit">
-        </a>
         <!-- <button type="submit" class="kfmbtn">confirm</button> -->
       </form>
     </div>
@@ -170,52 +168,54 @@
         <h1 style="text-align: center;">Registration Form</h1>
         <form class="form" action="#">
           <i class="fas fa-x clsloan" style="text-align: end; cursor: pointer; font-size: 18px;"></i>
+          <h3 style="color: red; text-align: center;" class="loanerro"></h3>
             <div class="input-box">
                 <label>Full Name</label>
-                <input required="" placeholder="Enter full name" type="text">
+                <input required="" placeholder="Enter full name" type="text" class="inploan" name="fullname">
             </div>
             <div class="input-box">
               <label>Email address</label>
-              <input required="" placeholder="Email address" type="text">
+              <input required="" placeholder="Email address" type="email" class="inploan" name="email">
             </div>
             <div class="column">
                 <div class="input-box">
                   <label>Phone Number</label>
-                  <input required="" placeholder="Enter phone number" type="telephone">
+                  <input required="" placeholder="Enter phone number" type="telephone" class="inploan" name="phone">
                 </div>
                 <div class="input-box">
                   <label>Birth Date</label>
-                  <input required="" placeholder="Enter birth date" type="date">
+                  <input required="" placeholder="Enter birth date" type="date" class="inploan" name="dob">
                 </div>
             </div>
             <div class="gender-box">
               <label>Gender</label>
               <div class="gender-option" style="display: flex; gap: 1rem; text-align: center;">
                 <div class="gender">
-                  <input checked="" name="gender" id="check-male" type="radio">
+                  <input checked="" name="Male" id="check-male" type="radio">
                   <label for="check-male">Male</label>
                 </div>
                 <div class="gender">
-                  <input name="gender" id="check-female" type="radio">
+                  <input name="female" id="check-female" type="radio">
                   <label for="check-female">Female</label>
                 </div>
                 <div class="gender">
-                  <input name="gender" id="check-other" type="radio">
+                  <input name="notosay" id="check-other" type="radio">
                   <label for="check-other">Prefer not to say</label>
                 </div>
               </div>
             </div>
             <div class="input-box address">
               <label>Address</label>
-              <input required="" placeholder="Enter street address" type="text">
+              <input required="" name="address" placeholder="Enter street address" type="text" class="inploan">
               <div class="column">
-                <input required="" placeholder="State" type="text">
-                <input required="" placeholder="Enter your city" type="text">
-                <input required="" placeholder="Zipcode" type="number">
+                <input required="" placeholder="State" type="text" name="state" class="inploan">
+                <input required="" placeholder="Enter your city" type="text" name="city" class="inploan">
+                <input required="" placeholder="Zipcode" type="number" name="Zipcode" class="inploan">
               </div>
             </div>
             <button class="smitt" type="button">
-              <a href="./loan.html" style="text-decoration: none; color: white;">Submit</a>
+              <!-- <a href="./loan.html" style="text-decoration: none; color: white;">Submit</a> -->
+              Submit
             </button>
         </form>
       </section>

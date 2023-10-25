@@ -340,9 +340,6 @@ select {
     z-index: 10;
     border-radius: 5px;
     display: none;
-    box-shadow: -4px 6px 35px 7px rgba(0,0,0,0.41) inset;
-    -webkit-box-shadow: -4px 6px 35px 7px rgba(0,0,0,0.41) inset;
-    -moz-box-shadow: -4px 6px 35px 7px rgba(0,0,0,0.41) inset;
     margin-bottom: 3rem;
   }
   .userpoup i{

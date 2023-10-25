@@ -90,8 +90,7 @@ function secondRequired() {
       if (formbox1.classList.contains("openclass")) { 
         formbox1.classList.remove("openclass")
       }
-      confirmbtn.classList.add("openclass");
-      nextbtn.classList.add("closeclass");
+      // nextbtn.classList.add("closeclass");
     } else {
       error.textContent = "somethign is wrong"
     }
@@ -117,6 +116,38 @@ function secondRequired() {
   })
 
   // form validation 
+const redirectloan = document.querySelector(".smit");
+redirectloan.addEventListener("click", ()=>{
+  directinput.forEach(vl => {
+    if (vl.value === ""){
+      error.textContent = "All fields must be provided";
+    }else {
+      redirectloan.textContent = "Submitting..."
+      loader.style.display = "block"
+      setInterval(() => {
+        window.location.href = "sucess.html"
+      }, 5000);
+    }
+  })  
+}) 
+
+const loanerror = document.querySelector(".loanerro")
+const btnloaner = document.querySelector(".smitt");
+const loaninput = document.querySelectorAll(".inploan");
+
+btnloaner.addEventListener("click", ()=>{
+  loaninput.forEach(li => {
+    if (li.value === ""){
+      loanerror.textContent = "All field must not be empty";
+    }else {
+      redirectloan.textContent = "Submitting..."
+      loader.style.display = "block"
+      setInterval(() => {
+        window.location.href = "loan.html"
+      }, 5000);
+    }
+  })
+})
 
 
 const currentDate = new Date();
